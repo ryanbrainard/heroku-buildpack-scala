@@ -101,10 +101,11 @@ fi
 #for example if switching sbt version, or just updates to the script)
 cp "$BIN_DIR/../opt/sbt-$SBT_VERSION" "$SBT_BINDIR"/sbt
 
-#echo -n "-----> Installing sbt.boot.properties..."
+echo -n "-----> Installing sbt.boot.properties from $SBT_PROPS_URL"
 curl --silent --max-time 10 --location $SBT_PROPS_URL --output "$SBT_BINDIR"/sbt.boot.properties
-#echo " done"
+echo " done"
 
+cat $SBT_BINDIR/sbt.boot.properties
 
 #echo -n "-----> Intsalling plugins..."
 HEROKU_PLUGIN="Heroku-$SBT_VERSION.scala"
